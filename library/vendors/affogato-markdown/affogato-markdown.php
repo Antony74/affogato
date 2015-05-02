@@ -11,7 +11,7 @@
 
 @define( 'MARKDOWN_PARSER_CLASS',  'AffogatoMarkdown_Parser' );
 
-require_once('../markdown/markdown.php');
+require_once(dirname(__FILE__) . '/../markdown/markdown.php');
 
 class AffogatoMarkdown_Parser extends MarkdownExtra_Parser
 {
@@ -48,8 +48,7 @@ class AffogatoMarkdown_Parser extends MarkdownExtra_Parser
 			}xm',
 			function($matches)
 			{
-				print_r($matches);
-				return $this->_doFencedCodeBlocks_callback($matches);
+				return CreateSketch($matches[2]);
 			},
 			$text);
 
@@ -57,6 +56,17 @@ class AffogatoMarkdown_Parser extends MarkdownExtra_Parser
 	}
 
 };
+
+function CreateSketch($sCode)
+{
+	$sID = uniqid();
+	$sCode = json_encode($sCode);
+
+	return "<p>\r\n"
+	.      "<canvas id='{$sID}'></canvas>\r\n"
+	.	   "<script>new Processing('{$sID}', {$sCode});</script>\r\n"
+	.      "</p>\r\n";
+}
 
 ?>
 

@@ -1,3 +1,12 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Hello world</title>
+  <script src="processing.js"></script>
+</head>
+<body>
+
+
 <?php
 
 require('affogato-markdown.php');
@@ -12,4 +21,7 @@ $out = markdown($in);
 echo($out);
 
 ?>
+
+</body>
+</html>
 

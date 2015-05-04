@@ -76,15 +76,15 @@ function CreateSketch($sRawProcessingCode)
     $nDocumentRootLength = count(explode(DIRECTORY_SEPARATOR, $_SERVER['DOCUMENT_ROOT'])) + 1;
     $sRootUrl = '/' . implode(DIRECTORY_SEPARATOR, array_slice(explode(DIRECTORY_SEPARATOR, __FILE__), $nDocumentRootLength, -4));
 
-    return "<p>                                                                           \r\n"
-    .      "    <iframe sandbox='allow-scripts' style='border: 1px solid black' srcdoc=\"                \r\n"
+    return "<p><div style='resize:both; overflow: hidden; border: 1px solid black'>                                                  \r\n"
+    .      "    <iframe sandbox='allow-scripts' style='width:100%; height 100%;' scrolling='no' srcdoc=\"  \r\n"
     .      "        <html>                                                                \r\n"
     .      "        <head>                                                                \r\n"
     .      "            <title>sketch</title>                                             \r\n"
     .      "            <script src='{$sRootUrl}/js/library/jquery.js'></script>          \r\n"
     .      "            <script src='{$sRootUrl}/library/vendors/affogato-markdown/processing.js'></script>\r\n"
     .      "        </head>                                                               \r\n"
-    .      "        <body>                                                                \r\n"
+    .      "        <body style='margin: 0px'>                                            \r\n"
     .      "            <canvas id='{$sID}'>                                              \r\n"
     .      "            </canvas>                                                         \r\n"
     .      "            <script>                                                          \r\n"
@@ -107,7 +107,7 @@ function CreateSketch($sRawProcessingCode)
     .      "        </html>\">                                                            \r\n"
     .      "        Sorry, your browser does not support iframes                          \r\n"
     .      "    </iframe>                                                                 \r\n"
-    .      "</p>                                                                          \r\n";
+    .      "</div></p>                                                                    \r\n";
 }
 
 ?>

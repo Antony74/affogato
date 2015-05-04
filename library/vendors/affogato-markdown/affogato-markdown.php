@@ -76,8 +76,8 @@ function CreateSketch($sRawProcessingCode)
     $nDocumentRootLength = count(explode(DIRECTORY_SEPARATOR, $_SERVER['DOCUMENT_ROOT'])) + 1;
     $sRootUrl = '/' . implode(DIRECTORY_SEPARATOR, array_slice(explode(DIRECTORY_SEPARATOR, __FILE__), $nDocumentRootLength, -4));
 
-    return "<p><div style='resize:both; overflow: hidden; border: 1px solid black'>                                                  \r\n"
-    .      "    <iframe sandbox='allow-scripts' style='width:100%; height 100%;' scrolling='no' srcdoc=\"  \r\n"
+    return "<p><div style='resize:both; overflow: hidden; border: 1px solid black'>       \r\n"
+    .      "    <iframe sandbox='allow-scripts' style='width:100%; height 100%;' scrolling='no' srcdoc=\"   \r\n"
     .      "        <html>                                                                \r\n"
     .      "        <head>                                                                \r\n"
     .      "            <title>sketch</title>                                             \r\n"
@@ -85,6 +85,13 @@ function CreateSketch($sRawProcessingCode)
     .      "            <script src='{$sRootUrl}/library/vendors/affogato-markdown/processing.js'></script>\r\n"
     .      "        </head>                                                               \r\n"
     .      "        <body style='margin: 0px'>                                            \r\n"
+    .      "            <table id='play-{$sID}' style='width: 100%'>                      \r\n"
+    .      "                <tr style='height: 150px'>                                    \r\n"
+    .      "                    <td style='text-align:center'>                            \r\n"
+    .      "                        &#9654;                                               \r\n"
+    .      "                    </td>                                                     \r\n"
+    .      "                </tr>                                                         \r\n"
+    .      "            </table>                                                          \r\n"
     .      "            <canvas id='{$sID}'>                                              \r\n"
     .      "            </canvas>                                                         \r\n"
     .      "            <script>                                                          \r\n"
@@ -94,6 +101,7 @@ function CreateSketch($sRawProcessingCode)
     .      "                    {                                                         \r\n"
     .      "                        $('body').one('click', function()                     \r\n"
     .      "                        {                                                     \r\n"
+    .      "                            $('#play-{$sID}').remove();                       \r\n"
     .      "                            new Processing('{$sID}', {$sProcessingCode});     \r\n"
     .      "                        });                                                   \r\n"
     .      "                    }                                                         \r\n"

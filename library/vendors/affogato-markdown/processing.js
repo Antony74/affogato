@@ -9500,7 +9500,9 @@ module.exports = function setupParser(Processing, options) {
   // fascinating "read only" jshint error if we don't start a new var block here.
   var HTMLCanvasElement = window.HTMLCanvasElement,
       HTMLImageElement = window.HTMLImageElement,
-      localStorage = window.localStorage;
+      localStorage = null;
+
+  try {localStorage = window.localStorage;} catch(e) {} // It's not the end of the world if we can't use localStorage because we're in the iframe sandbox - very few operations rely on it so just ignore this error and carry on.
 
   var isDOMPresent = ("document" in this) && !("fake" in this.document);
 

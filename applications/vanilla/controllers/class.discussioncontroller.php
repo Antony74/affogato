@@ -59,7 +59,6 @@ class DiscussionController extends VanillaController {
       $Session = Gdn::Session();
       $this->AddJsFile('jquery.autogrow.js');
       $this->AddJsFile('discussion.js');
-      $this->AddJsFile('processing.min.js');
       $this->AddJsFile('autosave.js');
       Gdn_Theme::Section('Discussion');
 
@@ -704,7 +703,6 @@ body { background: transparent !important; }
       $this->AddJsFile('jquery.autogrow.js');
       $this->RemoveJsFile('autosave.js');
       $this->AddJsFile('discussion.js');
-      $this->AddJsFile('processing.min.js');
       $this->AddDefinition('DoInform', '0'); // Suppress inform messages on embedded page.
       $this->AddDefinition('SelfUrl', Gdn::Request()->PathAndQuery());
       $this->AddDefinition('Embedded', TRUE);

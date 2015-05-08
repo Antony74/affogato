@@ -9,5 +9,6 @@
       echo '<span class="ButtonWrap"><span>url</span></span>';
       echo '<span class="ButtonWrap"><span>quote</span></span>';
       echo '<span class="ButtonWrap"><span>spoiler</span></span>';
+      echo '<span class="ButtonWrap"><span>sketch</span></span>';
    ?></div>
 </div>

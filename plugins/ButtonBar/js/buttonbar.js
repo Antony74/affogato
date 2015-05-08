@@ -269,6 +269,7 @@ jQuery(document).ready(function($) {
          ButtonBar.BindShortcut(TextArea, 'url', 'ctrl+L');
          ButtonBar.BindShortcut(TextArea, 'code', 'ctrl+O');
          ButtonBar.BindShortcut(TextArea, 'quote', 'ctrl+Q');
+         ButtonBar.BindShortcut(TextArea, 'sketch', 'ctrl+J');
          ButtonBar.BindShortcut(TextArea, 'quickurl', 'ctrl+shift+L');
          ButtonBar.BindShortcut(TextArea, 'post', 'tab');
       },
@@ -576,7 +577,11 @@ jQuery(document).ready(function($) {
                } else {
                   $(TextArea).insertRoundTag('`',markdownOpts);
                }
-               break;
+               break; 
+
+            case 'sketch':
+                $(TextArea).insertRoundCaret('```Processing\n', '\n```');
+                break;
 
             case 'image':
                var thisOpts = $.extend(markdownOpts, {

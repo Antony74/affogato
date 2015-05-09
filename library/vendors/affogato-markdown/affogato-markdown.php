@@ -74,6 +74,11 @@ class AffogatoMarkdown_Parser extends MarkdownExtra_Parser
         $nDocumentRootLength = count(explode(DIRECTORY_SEPARATOR, $_SERVER['DOCUMENT_ROOT'])) + 1;
         $sRootUrl = '/' . implode(DIRECTORY_SEPARATOR, array_slice(explode(DIRECTORY_SEPARATOR, __FILE__), $nDocumentRootLength, -4));
 
+        if ($sRootUrl === '/')
+        {
+            $sRootUrl = '';
+        }
+
         return "<p>                                                                           \r\n"
         .      "<div style='resize:both; overflow: hidden; border: 1px solid black'>          \r\n"
         .      "    <iframe sandbox='allow-scripts' style='width:100%; height 100%;' scrolling='no' srcdoc=\"   \r\n"

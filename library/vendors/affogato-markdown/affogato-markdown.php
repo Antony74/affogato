@@ -70,7 +70,7 @@ class AffogatoMarkdown_Parser extends MarkdownExtra_Parser
     {
         $sID = uniqid();
 
-        $sProcessingCode = str_replace('"', "'", json_encode($matches[2], JSON_HEX_QUOT));
+        $sProcessingCode = str_replace('"', "'", json_encode($matches[2], JSON_HEX_QUOT | JSON_HEX_APOS));
         $nDocumentRootLength = count(explode(DIRECTORY_SEPARATOR, $_SERVER['DOCUMENT_ROOT'])) + 1;
         $sRootUrl = '/' . implode(DIRECTORY_SEPARATOR, array_slice(explode(DIRECTORY_SEPARATOR, __FILE__), $nDocumentRootLength, -4));
 
@@ -81,7 +81,7 @@ class AffogatoMarkdown_Parser extends MarkdownExtra_Parser
 
         return "<p>                                                                           \r\n"
         .      "<div style='resize:both; overflow: hidden; border: 1px solid black'>          \r\n"
-        .      "    <iframe sandbox='allow-scripts' style='width:100%; height 100%;' scrolling='no' srcdoc=\"   \r\n"
+        .      "    <iframe sandbox='allow-scripts' style='width:100%; height:100%;' scrolling='no' srcdoc=\"   \r\n"
         .      "        <html>                                                                \r\n"
         .      "        <head>                                                                \r\n"
         .      "            <title>sketch</title>                                             \r\n"

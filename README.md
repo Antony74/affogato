@@ -1,3 +1,36 @@
+Affogato is a fork of Vanilla Forums which allows [Processing.js](http://processingjs.org/) sketches (art and interactive animations) to be included within forum messages.   This is intended to make it easier to discuss the Processing programming language (learn, share, comment on other people's work, etc).  A small extension to markdown syntax is used to include Processing content within a message:
+
+    ```Processing
+    rect(20,30,40,50);
+    println("hello, world!");
+    ```
+
+This is the same syntax that Git Flavored Markdown uses to provide code-highlighting.  Iframe sandboxing prevents posted content from doing mischievous things to the rest of the page.
+
+There is an Affogato forum running here
+
+http://affogato.org
+
+Come over and give it a try!
+
+***
+
+[Affogato](http://en.wikipedia.org/wiki/Affogato) is a dessert of vanilla ice cream topped with a shot of espresso.  This forum software has been named after the dessert in the hope that chat and code can be combined almost as easily.
+
+***
+
+```
+
+
+
+
+
+
+
+```
+
+And here's the original README for Vanilla:
+
 ![Vanilla](http://cdn.vanillaforums.com/vanilla-black-logo-400.svg)
 
 ## Howdy, Stranger!
